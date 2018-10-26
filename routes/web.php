@@ -28,6 +28,20 @@ Route::group (['prefix'=>'TipoCuenta'], function(){
     Route::post('actualizar','TipoCuentaController@actualizar');
 });
 
+
+//Rutas Empresa
+Route::group (['prefix'=>'Empresa'], function(){
+    Route::get('index','EmpresaController@index');
+
+});
+
+//Rutas Empresa
+Route::group (['prefix'=>'Cuentas'], function(){
+    Route::get('index','CuentasController@index');
+
+});
+
+
 //Ruta Home
 Route::get('home', [
     'as' => 'home',
