@@ -13,10 +13,23 @@
 
 
 
-Route::get('/index', function () {
-    return view('TipoCuenta.index');
-});
+
 
 Route::get('/', function () {
     return view('welcome');
 });
+
+//Rutas TipoCuentaController
+Route::group (['prefix'=>'TipoCuenta'], function(){
+    Route::get('index','TipoCuentaController@index');
+    Route::get('editar/{id}','TipoCuentaController@editar');
+    Route::post('guardar','TipoCuentaController@guardar');
+    Route::get('eliminar/{id}','TipoCuentaController@eliminar');
+    Route::post('actualizar','TipoCuentaController@actualizar');
+});
+
+//Ruta Home
+Route::get('home', [
+    'as' => 'home',
+    'uses' => 'HomeController@index'
+]);
